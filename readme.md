@@ -3,7 +3,7 @@ Amper is a REST-API which converts **Markdown** text to Google's AMP syntax.
 ## Usage
 Send a POST request with:
 
-1. URL: http://amper.azurewebsites.net/amp
+1. URL: http://amper.satishyadav.com/amp
 2. Content-Type: ````application/x-www-form-urlencoded````
 3. Parameter "md" with the _Markdown_ syntax.
 
@@ -15,7 +15,7 @@ Output will be amp html.
 
 ````HTTP
 POST /amp HTTP/1.1
-Host: amper.azurewebsites.net
+Host: amper.satishyadav.com
 Content-Type: application/x-www-form-urlencoded
 
 md=%23+Hello+World%0AThis+was+written+in+**Markdown**
@@ -25,14 +25,14 @@ md=%23+Hello+World%0AThis+was+written+in+**Markdown**
 
 ```` cURL
 curl -X POST \
-  http://amper.azurewebsites.net/amp \
+  http://amper.satishyadav.com/amp \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'md=%23%20Hello%20World%0AThis%20was%20written%20in%20**Markdown**'
 ````
 
 ### C# (RestSharp)
 ```` C#
-var client = new RestClient("http://amper.azurewebsites.net/amp");
+var client = new RestClient("http://amper.satishyadav.com/amp");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/x-www-form-urlencoded");
 request.AddParameter("application/x-www-form-urlencoded", "md=%23%20Hello%20World%0AThis%20was%20written%20in%20**Markdown**", ParameterType.RequestBody);
@@ -47,7 +47,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
 RequestBody body = RequestBody.create(mediaType, "md=%23%20Hello%20World%0AThis%20was%20written%20in%20**Markdown**");
 Request request = new Request.Builder()
-  .url("http://amper.azurewebsites.net/amp")
+  .url("http://amper.satishyadav.com/amp")
   .post(body)
   .addHeader("content-type", "application/x-www-form-urlencoded")
   .build();
@@ -66,7 +66,7 @@ xhr.addEventListener("readystatechange", function () {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://amper.azurewebsites.net/amp");
+xhr.open("POST", "http://amper.satishyadav.com/amp");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.send(data);
 
@@ -78,7 +78,7 @@ xhr.send(data);
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://amper.azurewebsites.net/amp",
+  "url": "http://amper.satishyadav.com/amp",
   "method": "POST",
   "headers": {
     "content-type": "application/x-www-form-urlencoded",
@@ -102,7 +102,7 @@ var http = require("http");
 
 var options = {
   "method": "POST",
-  "hostname": "amper.azurewebsites.net",
+  "hostname": "amper.satishyadav.com",
   "port": null,
   "path": "/amp",
   "headers": {
@@ -135,7 +135,7 @@ req.end();
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'http://amper.azurewebsites.net/amp',
+  url: 'http://amper.satishyadav.com/amp',
   headers:  { 'content-type': 'application/x-www-form-urlencoded' },
   form: { md: '# Hello World\nThis was written in **Markdown**' }
 };
@@ -153,7 +153,7 @@ request(options, function (error, response, body) {
 <?php
 
 $request = new HttpRequest();
-$request->setUrl('http://amper.azurewebsites.net/amp');
+$request->setUrl('http://amper.satishyadav.com/amp');
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
@@ -181,7 +181,7 @@ try {
 ````python
 import http.client
 
-conn = http.client.HTTPConnection("amper.azurewebsites.net")
+conn = http.client.HTTPConnection("amper.satishyadav.com")
 
 payload = "md=%23%20Hello%20World%0AThis%20was%20written%20in%20**Markdown**"
 
